@@ -1,0 +1,47 @@
+﻿@model List<Currency>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+<div class="container mt-5">
+
+
+    <button type="button" class="btn btn-success float-lg-right" asp-controller="CurrencyController" asp-action="Update">Güncelle</button>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Döviz Kodu</th>
+                <th scope="col">Birim</th>
+                <th scope="col">Döviz Cinsi</th>
+                <th scope="col">Döviz Alış</th>
+                <th scope="col">Döviz Satış</th>
+                <th scope="col">Efektif Alış </th>
+                <th scope="col">Efektif Satış</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var currency in Model)
+            {
+
+            <tr>
+                <td>@currency.CurrencyName</td>
+                <td>@currency.Unit</td>
+                <td>@currency.Isim</td>
+                <td>@currency.ForexBuying</td>
+                <td>@currency.ForexSelling</td>
+                <td>@currency.BanknoteBuying</td>
+                <td>@currency.BanknoteSelling</td>
+
+            </tr>
+            }
+
+        </tbody>
+    </table>
+
+   
+
+</div>
+
